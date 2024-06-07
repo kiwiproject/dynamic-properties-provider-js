@@ -1,0 +1,44 @@
+{
+  "name": "@kiwiproject/dyanmic-properties-provider",
+  "version": "0.1.0",
+  "description": "Dynamic Properties Provider is a utility library to assist in the generation of field definitions based on model classes. This process is helpful if a UI needs to build dynamic forms based on models in a service but don't want to hardcode all the fields of the models in the UI. This is a port of the Java library with the same name.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "format": "node node_modules/.bin/prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
+    "lint": "node node_modules/.bin/eslint --ext .js,.ts .",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --coverage --collectCoverageFrom=src/**/*.ts"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/__tests__/__utils__",
+      "<rootDir>/node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "src/index.ts"
+    ]
+  },
+  "dependencies": {
+    "express": "4.19.2"
+  },
+  "devDependencies": {
+    "@babel/core": "7.24.0",
+    "@babel/preset-env": "7.24.0",
+    "@babel/preset-typescript": "7.23.3",
+    "@jest/globals": "29.7.0",
+    "@types/express": "4.17.21",
+    "@types/node": "20.11.28",
+    "@types/supertest": "6.0.2",
+    "@typescript-eslint/eslint-plugin": "7.2.0",
+    "@typescript-eslint/parser": "7.2.0",
+    "babel-jest": "29.7.0",
+    "eslint": "8.57.0",
+    "jest": "29.7.0",
+    "prettier": "3.2.5",
+    "supertest": "7.0.0",
+    "typescript": "5.4.2"
+  }
+}
