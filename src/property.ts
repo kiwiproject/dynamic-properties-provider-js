@@ -17,52 +17,52 @@ export class Property {
     return new Property();
   }
 
-  setName(name: string): Property {
+  setName(name: string): this {
     this.name = name;
     return this;
   }
 
-  setLabel(label: string): Property {
+  setLabel(label: string): this {
     this.label = label;
     return this;
   }
 
-  setType(type: string): Property {
+  setType(type: string): this {
     this.type = type;
     return this;
   }
 
-  setRequired(required: boolean): Property {
+  setRequired(required: boolean): this {
     this.required = required;
     return this;
   }
 
-  setVisible(visible: boolean): Property {
+  setVisible(visible: boolean): this {
     this.visible = visible;
     return this;
   }
 
-  setEditable(editable: boolean): Property {
+  setEditable(editable: boolean): this {
     this.editable = editable;
     return this;
   }
 
-  setSensitive(sensitive: boolean): Property {
+  setSensitive(sensitive: boolean): this {
     this.sensitive = sensitive;
     return this;
   }
 
-  setUnits(units: Array<string>): Property {
+  setUnits(units: Array<string>): this {
     this.units = units;
     return this;
   }
 
-  setDefaultUnit(defaultUnit: string): Property {
+  setDefaultUnit(defaultUnit: string): this {
     this.defaultUnit = defaultUnit;
     return this;
   }
 
-  setValues(values: Array<any>): Property {
+  setValues(values: Array<any>): this {
     this.values = values;
     return this;
   }
