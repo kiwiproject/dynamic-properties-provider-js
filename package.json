@@ -1,5 +1,5 @@
 {
-  "name": "@kiwiproject/dyanmic-properties-provider",
+  "name": "@kiwiproject/dynamic-properties-provider",
   "version": "0.1.0",
   "description": "Dynamic Properties Provider is a utility library to assist in the generation of field definitions based on model classes. This process is helpful if a UI needs to build dynamic forms based on models in a service but don't want to hardcode all the fields of the models in the UI. This is a port of the Java library with the same name.",
   "main": "dist/index.js",
