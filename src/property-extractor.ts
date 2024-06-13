@@ -7,14 +7,12 @@ import { Property } from "./property";
  * @param obj The object that has a getDynamicProperties method
  * @throws error if given object does not have a getDynamicProperties method
  */
-function getPropertyListForObject(obj: any): Array<Property> {
-  if (!obj.getDynamicProperties) {
-    throw new Error(
-      'The given object does not have a "getDynamicProperties" method. Can not process property list.',
-    );
+async function getPropertyListForObject(obj: any): Promise<Array<Property>> {
+  if (!obj.hasOwnProperty("getDynamicProperties")) {
+    await Promise.reject(new Error('The given object does not have a "getDynamicProperties" method. Can not process property list.'));
   }
 
-  return obj.getDynamicProperties();
+  return await obj.getDynamicProperties();
 }
 
 /**
@@ -26,19 +24,19 @@ function setupDynamicPropertiesEndpoints(
 ): express.Router {
   const router = express.Router();
 
-  router.get("/kiwi/dynamic-properties", (_req, res) => {
+  router.get("/kiwi/dynamic-properties", async (_req, res, next) => {
     const props: object = {};
     for (const key of Object.keys(objects)) {
-      props[key] = getPropertyListForObject(objects[key]);
+      props[key] = await getPropertyListForObject(objects[key]).catch(next);
     }
 
     res.json(props);
   });
 
-  router.get("/kiwi/dynamic-properties/:identifier", (req, res) => {
-    const objectProps = getPropertyListForObject(
+  router.get("/kiwi/dynamic-properties/:identifier", async (req, res, next) => {
+    const objectProps = await getPropertyListForObject(
       objects[req.params.identifier],
-    );
+    ).catch(next);
     res.json(objectProps);
   });
 

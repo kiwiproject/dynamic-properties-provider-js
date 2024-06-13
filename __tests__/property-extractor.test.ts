@@ -12,16 +12,14 @@ describe("Property Extractor", () => {
         foo: "boom",
       };
 
-      expect(() => {
-        PropertyExtractor.getPropertyListForObject(badObj);
-      }).toThrowError(
-        new Error(
-          'The given object does not have a "getDynamicProperties" method. Can not process property list.',
-        ),
+      expect(async () => {
+        await PropertyExtractor.getPropertyListForObject(badObj);
+      }).rejects.toEqual(
+          new Error('The given object does not have a "getDynamicProperties" method. Can not process property list.'),
       );
     });
 
-    it("should return the properties for the obj", () => {
+    it("should return the properties for the obj", async () => {
       const prop = Property.newProperty().setName("foo").setType("string");
 
       const goodObj = {
@@ -32,7 +30,7 @@ describe("Property Extractor", () => {
         },
       };
 
-      const propList = PropertyExtractor.getPropertyListForObject(goodObj);
+      const propList = await PropertyExtractor.getPropertyListForObject(goodObj);
 
       expect(propList).toEqual([prop]);
     });
@@ -59,16 +57,16 @@ describe("Property Extractor", () => {
         const studentObject = {
           foo: "Yeah",
 
-          getDynamicProperties: () => {
-            return [studentProp];
+          getDynamicProperties: async () => {
+            return Promise.resolve([studentProp]);
           },
         };
 
         const teacherObject = {
           foo: "Yeah",
 
-          getDynamicProperties: () => {
-            return [teacherProp];
+          getDynamicProperties: async () => {
+            return Promise.resolve([teacherProp]);
           },
         };
 
