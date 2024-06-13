@@ -9,7 +9,7 @@ import { Property } from "./property";
  */
 async function getPropertyListForObject(obj: any): Promise<Array<Property>> {
   if (!obj.hasOwnProperty("getDynamicProperties")) {
-    await Promise.reject('The given object does not have a "getDynamicProperties" method. Can not process property list.');
+    await Promise.reject(new Error('The given object does not have a "getDynamicProperties" method. Can not process property list.'));
   }
 
   return await obj.getDynamicProperties();

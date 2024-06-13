@@ -15,7 +15,7 @@ describe("Property Extractor", () => {
       expect(async () => {
         await PropertyExtractor.getPropertyListForObject(badObj);
       }).rejects.toEqual(
-          'The given object does not have a "getDynamicProperties" method. Can not process property list.',
+          new Error('The given object does not have a "getDynamicProperties" method. Can not process property list.'),
       );
     });
 
