@@ -1,4 +1,4 @@
-import express from "express";
+import { Router } from "express";
 import { Property } from "./property";
 
 /**
@@ -21,8 +21,8 @@ async function getPropertyListForObject(obj: any): Promise<Array<Property>> {
  */
 function setupDynamicPropertiesEndpoints(
   objects: Record<string, any>,
-): express.Router {
-  const router = express.Router();
+): Router {
+  const router = Router();
 
   router.get("/kiwi/dynamic-properties", async (_req, res, next) => {
     const props: object = {};
