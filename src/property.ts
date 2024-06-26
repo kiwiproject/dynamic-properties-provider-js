@@ -5,7 +5,8 @@ export class Property {
 
   required: boolean;
   visible: boolean;
-  editable: boolean;
+  editableOnCreate: boolean;
+  editableOnUpdate: boolean;
   sensitive: boolean;
 
   units: Array<string>;
@@ -42,8 +43,13 @@ export class Property {
     return this;
   }
 
-  setEditable(editable: boolean): this {
-    this.editable = editable;
+  setEditableOnCreate(editableOnCreate: boolean): this {
+    this.editableOnCreate = editableOnCreate;
+    return this;
+  }
+
+  setEditableOnUpdate(editableOnUpdate: boolean): this {
+    this.editableOnUpdate = editableOnUpdate;
     return this;
   }
 

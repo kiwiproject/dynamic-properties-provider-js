@@ -8,22 +8,24 @@ describe("Property", () => {
       .setType("string")
       .setLabel("Property Name")
       .setVisible(true)
-      .setEditable(true)
+      .setEditableOnCreate(true)
+      .setEditableOnUpdate(true)
       .setSensitive(false)
       .setRequired(false)
       .setUnits(["m", "km"])
       .setDefaultUnit("km")
-      .setValues(["blah"]);
+      .setValues([{ value: 1, display: "blah"}]);
 
     expect(prop.name).toEqual("name");
     expect(prop.type).toEqual("string");
     expect(prop.label).toEqual("Property Name");
     expect(prop.visible).toEqual(true);
-    expect(prop.editable).toEqual(true);
+    expect(prop.editableOnCreate).toEqual(true);
+    expect(prop.editableOnUpdate).toEqual(true);
     expect(prop.sensitive).toEqual(false);
     expect(prop.required).toEqual(false);
     expect(prop.units).toEqual(["m", "km"]);
     expect(prop.defaultUnit).toEqual("km");
-    expect(prop.values).toEqual(["blah"]);
+    expect(prop.values).toEqual([{ value: 1, display: "blah"}]);
   });
 });
