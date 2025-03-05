@@ -14,7 +14,7 @@ describe("Property", () => {
       .setRequired(false)
       .setUnits(["m", "km"])
       .setDefaultUnit("km")
-      .setValues([{ value: 1, display: "blah"}]);
+      .setValues([{ value: 1, display: "blah" }]);
 
     expect(prop.name).toEqual("name");
     expect(prop.type).toEqual("string");
@@ -26,6 +26,6 @@ describe("Property", () => {
     expect(prop.required).toEqual(false);
     expect(prop.units).toEqual(["m", "km"]);
     expect(prop.defaultUnit).toEqual("km");
-    expect(prop.values).toEqual([{ value: 1, display: "blah"}]);
+    expect(prop.values).toEqual([{ value: 1, display: "blah" }]);
   });
 });
