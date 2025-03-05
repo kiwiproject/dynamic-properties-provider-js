@@ -1,17 +1,18 @@
 import { Router } from "express";
 import { Property } from "./property";
 
+export interface ObjectWithDynamicProperties {
+  getDynamicProperties(): Promise<Array<Property>>;
+}
+
 /**
  * Attempts to pull the list of dynamic properties for a given object.
  *
  * @param obj The object that has a getDynamicProperties method
- * @throws error if given object does not have a getDynamicProperties method
  */
-async function getPropertyListForObject(obj: any): Promise<Array<Property>> {
-  if (!obj.hasOwnProperty("getDynamicProperties")) {
-    await Promise.reject(new Error('The given object does not have a "getDynamicProperties" method. Can not process property list.'));
-  }
-
+async function getPropertyListForObject(
+  obj: ObjectWithDynamicProperties,
+): Promise<Array<Property>> {
   return await obj.getDynamicProperties();
 }
 
@@ -20,7 +21,7 @@ async function getPropertyListForObject(obj: any): Promise<Array<Property>> {
  * @param objects The map of identifiers to an object. This object will ultimately be passed to #getPropertyListForObject
  */
 function setupDynamicPropertiesEndpoints(
-  objects: Record<string, any>,
+  objects: Record<string, ObjectWithDynamicProperties>,
 ): Router {
   const router = Router();
 

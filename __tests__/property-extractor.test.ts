@@ -4,33 +4,27 @@ import request from "supertest";
 import { PropertyExtractor } from "../src";
 import { Property } from "../src/property";
 import express from "express";
+import {ObjectWithDynamicProperties} from "../src/property-extractor";
+
+type FooObj = ObjectWithDynamicProperties & {
+  foo: string;
+}
 
 describe("Property Extractor", () => {
   describe("getPropertyListForObject", () => {
-    it("should throw an error if object is not set up correctly", () => {
-      const badObj = {
-        foo: "boom",
-      };
-
-      expect(async () => {
-        await PropertyExtractor.getPropertyListForObject(badObj);
-      }).rejects.toEqual(
-          new Error('The given object does not have a "getDynamicProperties" method. Can not process property list.'),
-      );
-    });
-
     it("should return the properties for the obj", async () => {
       const prop = Property.newProperty().setName("foo").setType("string");
 
-      const goodObj = {
+      const goodObj: FooObj = {
         foo: "Yeah",
 
-        getDynamicProperties: () => {
+        getDynamicProperties: async () => {
           return [prop];
         },
       };
 
-      const propList = await PropertyExtractor.getPropertyListForObject(goodObj);
+      const propList =
+        await PropertyExtractor.getPropertyListForObject(goodObj);
 
       expect(propList).toEqual([prop]);
     });
@@ -54,7 +48,7 @@ describe("Property Extractor", () => {
           .setName("bar")
           .setType("string");
 
-        const studentObject = {
+        const studentObject: FooObj = {
           foo: "Yeah",
 
           getDynamicProperties: async () => {
@@ -62,7 +56,7 @@ describe("Property Extractor", () => {
           },
         };
 
-        const teacherObject = {
+        const teacherObject: FooObj = {
           foo: "Yeah",
 
           getDynamicProperties: async () => {
@@ -95,18 +89,18 @@ describe("Property Extractor", () => {
           .setName("bar")
           .setType("string");
 
-        const studentObject = {
+        const studentObject: FooObj = {
           foo: "Yeah",
 
-          getDynamicProperties: () => {
+          getDynamicProperties: async () => {
             return [studentProp];
           },
         };
 
-        const teacherObject = {
+        const teacherObject: FooObj = {
           foo: "Yeah",
 
-          getDynamicProperties: () => {
+          getDynamicProperties: async () => {
             return [teacherProp];
           },
         };

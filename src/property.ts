@@ -12,7 +12,7 @@ export class Property {
   units: Array<string>;
   defaultUnit: string;
 
-  values: Array<{ value: string|number, display: string|number }> = [];
+  values: Array<{ value: string | number; display: string | number }> = [];
 
   static newProperty() {
     return new Property();
@@ -68,7 +68,9 @@ export class Property {
     return this;
   }
 
-  setValues(values: Array<{ value: string|number, display: string|number }>): this {
+  setValues(
+    values: Array<{ value: string | number; display: string | number }>,
+  ): this {
     this.values = values;
     return this;
   }
