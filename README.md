@@ -1,5 +1,5 @@
 ### Dynamic Properties Provider JS
-[![Build](https://github.com/kiwiproject/dynamic-properties-provider-js/workflows/build/badge.svg)](https://github.com/kiwiproject/dynamic-properties-provider-js/actions?query=workflow%3Abuild)
+[![Build](https://github.com/kiwiproject/dynamic-properties-provider-js/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/kiwiproject/dynamic-properties-provider-js/actions/workflows/build.yml?query=branch%3Amain)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kiwiproject_dynamic-properties-provider-js&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kiwiproject_dynamic-properties-provider-js)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kiwiproject_dynamic-properties-provider-js&metric=coverage)](https://sonarcloud.io/summary/new_code?id=kiwiproject_dynamic-properties-provider-js)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
