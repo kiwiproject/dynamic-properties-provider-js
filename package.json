@@ -25,14 +25,14 @@
     "express": "5.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.28.4",
-    "@babel/preset-env": "7.28.3",
-    "@babel/preset-typescript": "7.27.1",
+    "@babel/core": "7.28.5",
+    "@babel/preset-env": "7.28.5",
+    "@babel/preset-typescript": "7.28.5",
     "@eslint/eslintrc": "3.3.1",
     "@eslint/js": "9.38.0",
     "@jest/globals": "30.2.0",
-    "@types/express": "5.0.3",
-    "@types/node": "24.8.1",
+    "@types/express": "5.0.4",
+    "@types/node": "24.9.1",
     "@types/supertest": "6.0.3",
     "babel-jest": "30.2.0",
     "eslint": "9.38.0",
@@ -43,6 +43,6 @@
     "prettier": "3.6.2",
     "supertest": "7.1.4",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.46.1"
+    "typescript-eslint": "8.46.2"
   }
 }
