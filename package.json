@@ -1,13 +1,22 @@
 {
   "name": "@kiwiproject/dynamic-properties-provider",
-  "version": "0.3.0",
+  "version": "0.0.0-semantically-released",
   "description": "Dynamic Properties Provider is a utility library to assist in the generation of field definitions based on model classes. This process is helpful if a UI needs to build dynamic forms based on models in a service but don't want to hardcode all the fields of the models in the UI. This is a port of the Java library with the same name.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiwiproject/dynamic-properties-provider-js.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "scripts": {
+    "build": "tsc",
     "format": "npx prettier --ignore-path .gitignore --write \"**/*.+(ts|js|json)\"",
     "lint": "npx eslint --fix src",
     "test": "npx jest --coverage --collectCoverageFrom=src/**/*.ts"
@@ -42,6 +51,7 @@
     "jest": "30.2.0",
     "prettier": "3.7.4",
     "supertest": "7.2.2",
+    "semantic-release": "24.2.5",
     "typescript": "5.9.3",
     "typescript-eslint": "8.52.0"
   }
