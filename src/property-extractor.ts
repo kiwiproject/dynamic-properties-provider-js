@@ -28,7 +28,7 @@ function setupDynamicPropertiesEndpoints(
   router.get("/kiwi/dynamic-properties", async (_req, res, next) => {
     const props: Record<string, Array<Property>> = {};
     for (const key of Object.keys(objects)) {
-      props[key] = await getPropertyListForObject(objects[key]).catch(next);
+      props[key] = await getPropertyListForObject(objects[key]).catch(() => []);
     }
 
     res.json(props);
