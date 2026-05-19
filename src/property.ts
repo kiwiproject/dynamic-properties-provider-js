@@ -1,16 +1,16 @@
 export class Property {
-  name: string;
-  label: string;
-  type: string;
+  name: string = '';
+  label: string = '';
+  type: string = '';
 
-  required: boolean;
-  visible: boolean;
-  editableOnCreate: boolean;
-  editableOnUpdate: boolean;
-  sensitive: boolean;
+  required: boolean = false;
+  visible: boolean = false;
+  editableOnCreate: boolean = false;
+  editableOnUpdate: boolean = false;
+  sensitive: boolean = false;
 
-  units: Array<string>;
-  defaultUnit: string;
+  units: Array<string> = [];
+  defaultUnit: string = '';
 
   values: Array<{ value: string | number; display: string | number }> = [];
 
