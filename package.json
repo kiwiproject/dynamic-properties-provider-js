@@ -42,18 +42,18 @@
     "@jest/globals": "30.4.1",
     "@types/express": "5.0.6",
     "@types/node": "25.9.5",
-    "@types/supertest": "7.2.0",
+    "@types/supertest": "7.2.1",
     "babel-jest": "30.4.1",
-    "eslint": "10.5.0",
+    "eslint": "10.6.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-prettier": "5.5.6",
     "globals": "17.7.0",
     "jest": "30.4.2",
-    "prettier": "3.8.5",
+    "prettier": "3.9.4",
     "supertest": "7.2.2",
-    "semantic-release": "25.0.6",
+    "semantic-release": "25.0.7",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.62.0"
+    "typescript-eslint": "8.62.1"
   },
   "engines": { "node": ">=20" }
 }
