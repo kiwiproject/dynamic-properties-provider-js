@@ -33,6 +33,11 @@
   "dependencies": {
     "express": "5.2.1"
   },
+  "overrides": {
+    "@actions/http-client": {
+      "undici": "^7.29.0"
+    }
+  },
   "devDependencies": {
     "@babel/core": "7.29.7",
     "@babel/preset-env": "7.29.7",
